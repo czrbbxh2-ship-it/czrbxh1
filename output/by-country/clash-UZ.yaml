@@ -4,29 +4,30 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇧🇬 BG 01 - xiaohe
+- name: 🇺🇿 UZ 01 - xiaohe
   type: vless
-  server: 94.156.155.27
-  port: 443
-  uuid: 218fd696-e3a2-4c33-b397-a5f13a82969e
+  server: 189.74.97.47
+  port: 2087
+  uuid: 894fe9f0-b998-49c0-8003-a5007de921e1
   udp: true
-  tls: true
+  tls: false
   skip-cert-verify: true
-  reality-opts:
-    public-key: bY0-zlTOPCaEWDMw_BTzuzJW513tl6Hc61n4Z-q1cHE
-  servername: www.telekom.de
-  client-fingerprint: firefox
+  network: ws
+  ws-opts:
+    path: /755276b33b6f
+    headers:
+      Host: 189.74.97.47
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇺🇿 UZ 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
-  - 🇧🇬 BG 01 - xiaohe
+  - 🇺🇿 UZ 01 - xiaohe
 rules:
 - MATCH,PROXIES
